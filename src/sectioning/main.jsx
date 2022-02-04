@@ -1,6 +1,6 @@
 const Main = () => {
     return (
-        <body>I am the main</body>
+        <main>I am the main</main>
     )
 }
 
