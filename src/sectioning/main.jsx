@@ -12,8 +12,9 @@ const Main = () => {
         const cities = faker.address.city();
         const zipCodes = faker.address.zipCode();
         const pNumbers = faker.phone.phoneNumber();
+        const states = faker.address.state();
         return <Contact name={person} email={emails} address={addresses}
-            city={cities} zipCode={zipCodes} phone={pNumbers}/>
+            city={cities} zipCode={zipCodes} phone={pNumbers} state={states} />
     });
 
 
