@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Contact from "../components/contact";
-import Counter from "../components/counter";
 import { mockResponse } from "../utils/mockResponse";
 
 const Main = () => {
