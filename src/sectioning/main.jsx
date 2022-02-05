@@ -1,27 +1,21 @@
 import Contact from "../components/contact"
-import faker from "@faker-js/faker"
+import { mockResponse } from "../utils/mockResponse";
 
 const Main = () => {
-
-    const cheating = [1,1,1,1,1,1,1,1,1,1]
-
-    const names = cheating.map(name => {
-        const person = faker.name.findName();
-        const addresses = faker.address.streetAddress()
-        const emails = faker.internet.email();
-        const cities = faker.address.city();
-        const zipCodes = faker.address.zipCode();
-        const pNumbers = faker.phone.phoneNumber();
-        const states = faker.address.state();
-        return <Contact name={person} email={emails} address={addresses}
-            city={cities} zipCode={zipCodes} phone={pNumbers} state={states} />
+const response = mockResponse();
+const contacts = response.map((contact, index) =>{
+return (
+    <Contact contact={contact}  key={index} />
+    )
+    
+    
     });
 
 
     return (
         <>
             <main>
-                <ul>{names}</ul>
+                <ul>{contacts}</ul>
             </main>
         </>
     )
