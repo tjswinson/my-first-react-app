@@ -15,32 +15,35 @@ const ContactForm = ({action}) => {
 return (
     <form onSubmit={e => action(e, name)} >
       <div>  <label>
-            <span>Full name</span>
+            <span>Full name: </span>
             <input onChange={handleChange} value={name} />
             </label>
             </div>
             <br></br>
             <div> 
-            <label htmlFor="address">Address:</label>
+            <label htmlFor="address">Address: </label>
         <input type="text" id="address"/>  
             </div>
             <br></br>
             <div> 
-            <label htmlFor="city">City:</label>
+            <label htmlFor="city">City: </label>
         <input type="text" id="city"/>  
             </div>
             <br></br>
 <div> 
-            <label htmlFor="zip">Zip:</label>
+            <label htmlFor="zip">Zip: </label>
         <input type="text" id="zip"/>  
             </div>
             <br></br>
 <div>
-            <label htmlFor="phone">Phone:</label>
+            <label htmlFor="phone">Phone: </label>
         <input type="text" id="phone"/>  
             </div>
 <br></br>
-
+<div>
+<label htmlFor="email">Email: </label>
+        <input type="text" id="email"/>  
+            </div>
 
             <br></br>
 
