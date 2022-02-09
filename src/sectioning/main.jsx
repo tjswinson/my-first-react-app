@@ -8,9 +8,10 @@ const Main = () => {
   const response = mockResponse();
 
 const [fields, setFields] = useState();
-const handleSubmit = (e, name) => {
-    e.preventDefault();
-    setFields(name);
+
+const handleSubmit = (e, contactFields) => {
+   // e.preventDefault();
+   // setFields(name);
 };
 const contacts = response.map((contact, index) =>{
 return (

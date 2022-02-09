@@ -3,46 +3,49 @@ import {useState} from "react";
 
 const ContactForm = ({action}) => {
 
-    const [name, setName] = useState('Bob');
+    const [contact, setContact] = useState({});
 
     const handleChange = e => {
-        const target = e.target.value;
-        setName(target);
-    }
+        const key = e.target.dataset.keyname;
+        const value = e.target.value;
+        const updatedContact = {...contact};
+        updatedContact[key] = value;
+        setContact(updatedContact);
+    }; 
 
 
 
 return (
-    <form onSubmit={e => action(e, name)} >
+    <form onSubmit={e => action(e, contact)} >
       <div>  <label>
             <span>Full name: </span>
-            <input onChange={handleChange} value={name} />
+            <input onChange={handleChange} data-keyname="name" value={contact.name || ''} />
             </label>
             </div>
             <br></br>
             <div> 
-            <label htmlFor="address">Address: </label>
-        <input type="text" id="address"/>  
+            <span>Address: </span>
+            <input onChange={handleChange} data-keyname="address" value={contact.address || ''} />
             </div>
             <br></br>
             <div> 
-            <label htmlFor="city">City: </label>
-        <input type="text" id="city"/>  
+            <span>City: </span>
+            <input onChange={handleChange} data-keyname="city" value={contact.city || ''} /> 
             </div>
             <br></br>
 <div> 
-            <label htmlFor="zip">Zip: </label>
-        <input type="text" id="zip"/>  
+<span>Zip: </span>
+            <input onChange={handleChange}  data-keyname="zipCode"value={contact.zipCode || ''} />
             </div>
             <br></br>
 <div>
-            <label htmlFor="phone">Phone: </label>
-        <input type="text" id="phone"/>  
+<span>Phone: </span>
+            <input onChange={handleChange}  data-keyname="phone"value={contact.phone || ''} /> 
             </div>
 <br></br>
 <div>
-<label htmlFor="email">Email: </label>
-        <input type="text" id="email"/>  
+<span>Email: </span>
+            <input onChange={handleChange}  data-keyname="email"value={contact.email || ''} />
             </div>
 
             <br></br>
