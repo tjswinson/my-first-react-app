@@ -13,7 +13,12 @@ const ContactForm = ({action}) => {
         setContact(updatedContact);
     }; 
 
-
+        const handleSubmit = e => {
+            e.preventDefault();
+            action(contact);
+            setContact({});
+            
+        }
 
 return (
     <form onSubmit={e => action(e, contact)} >

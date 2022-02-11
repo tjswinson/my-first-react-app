@@ -2,22 +2,22 @@ import { useEffect, useState } from "react";
 import Contact from "../components/contact";
 import ContactForm from "../components/contactForm";
 import { mockResponse } from "../utils/mockResponse";
+import Modal from '../components/modal';
 import {Route, Routes } from 'react-router-dom';
 
 const Main = () => {
-  const response = mockResponse();
-
-const [fields, setFields] = useState([]);
+  const [fields, setFields] = useState([]);
+const [isShowModal, setIsShowModal] = useState(false);
 
 useEffect(() =>{
 
     setFields(mockResponse());
 }, []);
 
-const handleSubmit = (e, contactFields) => {
-    e.preventDefault();
-    const updatedContacts =[...fields, contactFields];
+const handleSubmit = contactFields => {
+       const updatedContacts =[...fields, contactFields];
    setFields(updatedContacts);
+   setIsShowModal(true);
 };
 
 
@@ -38,6 +38,7 @@ const contacts = fields.map((contact, index) => {
                     <Route path="list" element={<ul>{contacts}</ul>} />
                     <Route path="*" element={<h1>Page Not Found</h1>} />
                 </Routes>
+                {isShowModal && <Modal message="Contact added" />}
                     </>
     )
 }
