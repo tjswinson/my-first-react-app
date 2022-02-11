@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Contact from "../components/contact";
 import ContactForm from "../components/contactForm";
 import { mockResponse } from "../utils/mockResponse";
@@ -9,17 +9,19 @@ const Main = () => {
 
 const [fields, setFields] = useState([]);
 
+useEffect(() =>{
+
+    setFields(mockResponse());
+}, []);
+
 const handleSubmit = (e, contactFields) => {
     e.preventDefault();
     const updatedContacts =[...fields, contactFields];
    setFields(updatedContacts);
 };
 
-const newContacts = fields.map((contact, index) => {
-    return <Contact contact={contact} key={index} />;
-});
 
-const contacts = response.map((contact, index) => {
+const contacts = fields.map((contact, index) => {
     return <Contact contact={contact} key={index} />;
 });
 
