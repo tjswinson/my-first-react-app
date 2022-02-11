@@ -7,29 +7,30 @@ import { mockResponse } from "../utils/mockResponse";
 const Main = () => {
   const response = mockResponse();
 
-const [fields, setFields] = useState();
+const [fields, setFields] = useState([]);
 
 const handleSubmit = (e, contactFields) => {
-   // e.preventDefault();
-   // setFields(name);
+    e.preventDefault();
+    const updatedContacts =[...fields, contactFields];
+   setFields(updatedContacts);
 };
-const contacts = response.map((contact, index) =>{
-return (
-    
-       <Contact contact={contact}  key={index} />
-    
-    )
-        
-    });
 
-    
+const newContacts = fields.map((contact, index) => {
+    return <Contact contact={contact} key={index} />;
+});
 
+const contacts = response.map((contact, index) => {
+    return <Contact contact={contact} key={index} />;
+});
+
+
+  
 
     return (
         <>
-           
-           <ContactForm action={handleSubmit} />
           
+           <ContactForm action={handleSubmit} />
+      <ul>{newContacts}</ul>
                 <ul>{contacts}</ul>
                     </>
     )
