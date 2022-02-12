@@ -9,6 +9,7 @@ const Main = () => {
   const [fields, setFields] = useState([]);
 const [isShowModal, setIsShowModal] = useState(false);
 
+
 useEffect(() =>{
 
     setFields(mockResponse());
@@ -18,8 +19,11 @@ const handleSubmit = contactFields => {
        const updatedContacts =[...fields, contactFields];
    setFields(updatedContacts);
    setIsShowModal(true);
+  
 };
-
+const handleIsShowModal = () => {
+    setIsShowModal(!isShowModal);
+}
 
 const contacts = fields.map((contact, index) => {
     return <Contact contact={contact} key={index} />;
@@ -38,7 +42,7 @@ const contacts = fields.map((contact, index) => {
                     <Route path="list" element={<ul>{contacts}</ul>} />
                     <Route path="*" element={<h1>Page Not Found</h1>} />
                 </Routes>
-                {isShowModal && <Modal message="Contact added" />}
+                {isShowModal && <Modal action={handleIsShowModal} message="Contact added" />}
                     </>
     )
 }

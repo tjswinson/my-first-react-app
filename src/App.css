@@ -25,3 +25,16 @@ footer {
 ul {
   list-style-type: none;
 }
+
+.modal {
+background-color: cornsilk;
+  border: 1px solid black;
+  cursor: pointer;
+  padding: 40px 0;
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform:  translate(-50%, -50%);
+  width: 50%;
+}

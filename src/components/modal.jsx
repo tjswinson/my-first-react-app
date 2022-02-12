@@ -1,6 +1,10 @@
-const Modal = ({message}) => {
+
+const Modal = ({action, message}) => {
     return (
-        <div>{message}</div>
+        <div className="modal" onClick={action}>{message} 
+
     )
-};
+    </div>
+    )};
 export default Modal;
+

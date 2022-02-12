@@ -21,7 +21,7 @@ const ContactForm = ({action}) => {
         }
 
 return (
-    <form onSubmit={e => action(e, contact)} >
+    <form onSubmit={handleSubmit}>
       <div>  <label>
             <span>Full name: </span>
             <input onChange={handleChange} data-keyname="name" value={contact.name || ''} />
