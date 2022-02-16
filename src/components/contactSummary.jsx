@@ -1,23 +1,21 @@
-import { NavLink } from "react-router-dom";
-//import Contact from "./contactDetail";
+import { NavLink,Outlet } from "react-router-dom";
 
-const ContactSummary = ({fields}) => {
+const ContactSummary = ({action, fields}) => {
 
-const handleClick = e => {
-    const target = e.target.id;
-    console.log(target);
-};
-
-    const contacts = fields.map(contact => {
-        return (
-        <li id={contact.id} key={contact.id}>
-            <NavLink to={contact.id}>{contact.name}</NavLink>
-        </li>
+  const contacts = fields.map(contact => {
+    return (
+      <li key={contact.id}>
+        <NavLink id={contact.id} to={contact.id}>{contact.name}</NavLink>
+      </li>
     );
-    });
-return (
-    <ul onClick={handleClick}>{contacts}</ul>
-);
+   });
+
+  return (
+    <>
+      <ul className="contacts" onClick={action}>{contacts}</ul>
+      <Outlet />
+    </>
+  );
 };
 
 export default ContactSummary;

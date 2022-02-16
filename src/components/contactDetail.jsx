@@ -1,15 +1,18 @@
-const ContactDetail = ({ contact }) => {
-    const {name,address, city, state, zipCode, email, phone, job} = contact;
+const ContactDetail = ({ action, selectedContact }) => {
+    const {id, name, address, city, state, zipcode, phone, email, job} = selectedContact;
+  
     return (
-        <li>
-            <h2>Name: {name}</h2>
-            <p>Address: {address}</p>
-            <p>City: {city}, {state}</p>
-            <p>Zip: {zipCode}</p>
-            <p>Phone: {phone}</p>
-            <p>Email: {email}</p>
-        </li>
-    )
-};
-
-export default ContactDetail;
+      <li>
+        <h2>{name}</h2>
+        <p>{address}</p>
+        <p>{city}, {state}</p>
+        <p>{zipcode}</p>
+        <p>{phone}</p>
+        <p>{email}</p>
+        <p>{job}</p>
+        <button onClick={() => action(id)}>Delete Contact</button>
+      </li>
+    );
+  }
+  
+  export default ContactDetail;
