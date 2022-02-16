@@ -1,5 +1,6 @@
 * {
 box-sizing: border-box;
+font-family: sans-serif;
 margin: 0;
 padding: 0;
 }
@@ -25,6 +26,8 @@ width: 90%;
 
 header {
   background-color: rgb(170, 165, 165);
+  margin-bottom: 20px ;
+  padding: 20px 0;
 }
 
 main {
@@ -34,6 +37,7 @@ main {
 footer {
   flex-shrink: 0;
   background-color: rgb(170, 165, 165);
+  padding: 30px 0;
 }
 
 ul {
@@ -56,3 +60,15 @@ background-color: cornsilk;
 .contacts li {
   cursor:pointer;
 }
+
+.navs {
+  display: flex;
+}
+
+.navs--justify{
+  justify-content: space-between;
+  }
+
+  .navs--items li {
+    margin-left: 14px;
+  }
