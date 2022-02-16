@@ -40,11 +40,13 @@ const Main = () => {
     const updatedContacts = fields.filter(field => field.id !== id);
     setFields(updatedContacts);
     setSelectedContact(null);
-    navigate('/list')
+    navigate('/list');
   };
 
   return(
-    <>
+      <main>
+    <div className='y-wrap'>
+       
       <Routes>
         <Route path="/" element={<h1>Welcome to the Contact App</h1>} />
         <Route path="add" element={<ContactForm action={handleSubmit} />} />
@@ -55,7 +57,8 @@ const Main = () => {
         <Route path="*" element={<h1>Page not found</h1>} />
       </Routes>
       {isShowModal && <Modal action={handleIsShowModal} message="Contact added" />}
-    </>
+    </div>
+    </main>
   )
 }
 

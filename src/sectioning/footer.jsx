@@ -1,6 +1,7 @@
 const Footer = () => {
     return (
-        <footer>I am the footer</footer>
+        <footer>
+            <div className="y-wrap"> I am the footer</div></footer>
     )
 }
 
