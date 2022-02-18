@@ -43,6 +43,8 @@ const Main = () => {
     navigate('/list');
   };
 
+  
+
   return(
       <main>
     <div className='y-wrap'>
@@ -55,6 +57,7 @@ const Main = () => {
           {selectedContact && <Route path=":id" element={<ContactDetail action={handleDelete} selectedContact={selectedContact} />} />} 
         </Route>
         <Route path="*" element={<h1>Page not found</h1>} />
+        <Route path="privacypolicy" element={<ContactForm action={handleSubmit} />} />
       </Routes>
       {isShowModal && <Modal action={handleIsShowModal} message="Contact added" />}
     </div>

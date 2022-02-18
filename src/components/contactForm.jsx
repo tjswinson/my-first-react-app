@@ -22,7 +22,8 @@ const ContactForm = ({action}) => {
 
 return (
     <form onSubmit={handleSubmit}>
-      <div>  <label>
+      <div>  
+          <label>
             <span>Full name: </span>
             <input onChange={handleChange} data-keyname="name" value={contact.name || ''} />
             </label>
@@ -55,7 +56,7 @@ return (
 
             <br></br>
 
-            <button type="submit">Submit</button>
+            <button className="btn" type="submit">Submit</button>
     </form>
 );
 };
