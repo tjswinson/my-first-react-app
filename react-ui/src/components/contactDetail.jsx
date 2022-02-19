@@ -13,6 +13,7 @@ const handleGetImage = () => {
 
       
     return (
+        <div className="y-minwidth contact-details">
       <li>
         <h2>{name}</h2>
         <p>{address}</p>
@@ -21,12 +22,15 @@ const handleGetImage = () => {
         <p>{phone}</p>
         <p>{email}</p>
         <p>{job}</p>
-        <button onClick={() => action(id)}>Delete Contact</button>
-        <button onClick={handleGetImage}>Show Dog</button>
-        <div>
+        <button className="btn btn--multiples" onClick={() => action(id)}>Delete Contact</button>
+        <button className="btn btn--multiples" onClick={handleGetImage}>Show Dog</button>
+        
+            <div className="nimg">
         <img src={image} />
-        </div> 
+        </div>
+        
       </li>
+      </div>
     );
     }
   

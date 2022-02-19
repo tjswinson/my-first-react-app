@@ -5,7 +5,7 @@ const ContactSummary = ({action, fields}) => {
   const contacts = fields.map(contact => {
     return (
       <li key={contact.id}>
-        <NavLink id={contact.id} to={contact.id}>{contact.name}</NavLink>
+        <NavLink activeClassName="active" id={contact.id} to={contact.id}>{contact.name}</NavLink>
       </li>
     );
    });
