@@ -21,7 +21,8 @@
   "homepage": "https://github.com/tjswinson/my-first-react-app#readme",
   "dependencies": {
     "dotenv": "^16.0.0",
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "geocodio-library-node": "^1.4.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
