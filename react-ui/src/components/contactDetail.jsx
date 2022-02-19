@@ -5,15 +5,25 @@ const ContactDetail = ({ action, selectedContact }) => {
 
     const [image, setImage] = useState(null);
 
+const hardCodedAddress = {"address": "123 Main Street, Springfield, Or"};
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(hardCodedAddress)
+    }
+
 const handleGetImage = () => {
-    fetch('https://dog.ceo/api/breeds/image/random')
+    fetch('https://localhost:8080/location')
     .then(response => response.json())
     .then(data => setImage(data.message));
 };
 
       
     return (
-        <div className="y-minwidth contact-details">
+        
       <li>
         <h2>{name}</h2>
         <p>{address}</p>
@@ -23,14 +33,14 @@ const handleGetImage = () => {
         <p>{email}</p>
         <p>{job}</p>
         <button className="btn btn--multiples" onClick={() => action(id)}>Delete Contact</button>
-        <button className="btn btn--multiples" onClick={handleGetImage}>Show Dog</button>
+        <button onClick={handleGetGeo}>Get Geo Coordinates</button>
         
             <div className="nimg">
         <img src={image} />
         </div>
         
       </li>
-      </div>
+     
     );
     }
   
